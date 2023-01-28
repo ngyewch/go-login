@@ -1,0 +1,24 @@
+{
+  "appName": "MyApp",
+  "actions": [
+    {
+      "text": "Sign in with Github",
+      "link": "/auth/login/github",
+      "icon": "github"
+    }
+  ],
+  "backgrounds": [
+    {
+      "name": "Christian Paul Stobbe",
+      "profileUrl": "https://unsplash.com/@stobbewtf",
+      "url": "https://unsplash.com/photos/PkZo8mERNak",
+      "backgroundImage": "images/christian-paul-stobbe-PkZo8mERNak-unsplash.jpg"
+    },
+    {
+      "name": "Aedrian",
+      "profileUrl": "https://unsplash.com/@aedrian",
+      "url": "https://unsplash.com/photos/wAU3MfsGPNw",
+      "backgroundImage": "https://images.unsplash.com/photo-1674786738545-acf484100616?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80"
+    }
+  ]
+}

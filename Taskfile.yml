@@ -1,0 +1,42 @@
+version: '3'
+
+tasks:
+  clean:
+    desc: Clean
+    cmds:
+      - rm -rf build
+
+  build:
+    desc: Build
+    cmds:
+      - mkdir -p build/bin
+      - go build -o build/bin/go-login
+
+  test:
+    desc: Test
+    deps: [ build ]
+    cmds:
+      - build/bin/go-login generate testdata build/outputs
+
+  dependencyUpdates:
+    desc: Show dependency updates
+    deps: [ install-go-mod-outdated, install-gomajor ]
+    cmds:
+      - go mod download
+      - go mod tidy
+      - go list -u -m -json all | go-mod-outdated -update -direct
+      #- gomajor list
+
+  install-gomajor:
+    cmds:
+      - go install github.com/icholy/gomajor@v0.9.5
+      - asdf reshim golang
+    status:
+      - which gomajor
+
+  install-go-mod-outdated:
+    cmds:
+      - go install github.com/psampaz/go-mod-outdated@v0.8.0
+      - asdf reshim golang
+    status:
+      - which go-mod-outdated
